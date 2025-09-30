@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Book</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>RECIPE BOOK</h1>
+        <p>Discover delicious recipes from around the world!</p>
+    </header>
+        <section id="search-section">
+            <input type="text" id="search-bar" placeholder="Search recipes...">
+            <button onclick="searchRecipes()">Search</button>
+        </section>
+    <section style="display: flex; justify-content: center; gap: 2vw; margin: 2rem 0;">
+        <a href="main/baking/baking.html" class="icon-link">
+            <img src="main/baking/baking.jpg" alt="Baking" class="section-image" onerror="this.onerror=null;this.src='main/baking/placeholder.jpg';">
+            <div class="icon-label">Baking</div>
+        </a>
+        <a href="main/chinese/chinese.html" class="icon-link">
+            <img src="main/chinese/chinese.jpg" alt="Chinese" class="section-image" onerror="this.onerror=null;this.src='main/chinese/placeholder.jpg';">
+            <div class="icon-label">Chinese</div>
+        </a>
+    <a href="main/japanese/japanese.html" class="icon-link">
+            <img src="main/japanese/japanese.jpg" alt="Japanese" class="section-image" onerror="this.onerror=null;this.src='main/japanese/placeholder.jpg';">
+            <div class="icon-label">Japanese</div>
+        </a>
+        <a href="main/pakistani/pakistani.html" class="icon-link">
+            <img src="main/pakistani/pakistani.jpg" alt="Pakistani" class="section-image" onerror="this.onerror=null;this.src='main/pakistani/placeholder.jpg';">
+            <div class="icon-label">Pakistani</div>
+        </a>
+    </section>
+    <nav>
+        <ul>
+            <li><a href="main/baking/baking.html">Baking Recipes</a></li>
+            <li><a href="main/chinese/chinese.html">Chinese Recipes</a></li>
+            <li><a href="main/japanese/japanese.html">Japanese Recipes</a></li>
+            <li><a href="main/pakistani/pakistani.html">Pakistani Recipes</a></li>
+        </ul>
+    </nav>
+    <footer>
+        <p>&copy; Recipe Book by Kulsoom Kashif.</p>
+    </footer>
+</body>
+</html>
+    </body>
+    <script>
+    function searchRecipes() {
+        const query = document.getElementById('search-bar').value.toLowerCase();
+        const links = document.querySelectorAll('nav ul li');
+        links.forEach(li => {
+            const text = li.textContent.toLowerCase();
+            li.style.display = text.includes(query) ? '' : 'none';
+        });
+    }
+    </script>
